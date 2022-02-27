@@ -37,10 +37,46 @@
                     placeholder="Enter location"
                     required
                 />
-                <button type="submit" class="btn btn-search">Search</button>
+                <button type="submit" class="btn btn-search w-25">Find</button>
             </form>
             <button type="button" class="btn btn-search btn-map">Map</button>
-            <div id="error" class="error d-none alert position-absolute" role="alert"></div>
+            <div id="error" class="error d-block alert position-absolute" role="alert">Error</div>
+        </div>
+
+        <!-- MAP -->
+        <div class="generic-box container animate__fadeIn d-block">MAP</div>
+
+        <!-- RESULTS -->
+
+        <!-- RESULTS -->
+        <div id="results-box" class="justify-content-center d-flex">
+            <div class="generic-box animate__fadeIn d-block d-md-flex">
+                <div class="col-12 col-md-4 d-flex results__card">
+                    <div class="results__gradient--img"></div>
+                    <div class="results__gradient"></div>
+                    <div class="results__card--inner d-flex flex-column justify-content-between p-2">
+                        <div>
+                            <h2 id="card-weekday" class="font-weight-bold mb-1"></h2>
+                            <p id="card-date" class="font-weight-lighter mb-0"></p>
+                            <p class="d-flex align-items-baseline font-weight-lighter mb-1">
+                                <img width="10" height="15" src="./location.png" class="mr-1" />
+                                <span id="card-location"></span>
+                            </p>
+                        </div>
+                        <div>
+                            <p class="mb-1">Air Quality Index</p>
+                            <h2 class="font-weight-bold mb-1"><span id="card-index" class="index">5</span></h2>
+                            <h5 id="card-description" class="font-weight-lighter">Good</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-8 d-flex flex-column justify-content-between">
+                    <div class="mt-4 mt-md-2">
+                        <div id="details" class="d-flex flex-column mb-2"></div>
+                    </div>
+                    <ul id="details-week" class="results__week-list d-flex justify-content-between p-0"></ul>
+                </div>
+            </div>
         </div>
 
         <!-- LOADER -->
@@ -97,7 +133,6 @@
                 </div>
             </div>
         </div>
-
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
