@@ -36,9 +36,10 @@ header span.air {
     box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
     background-color: var(--bg-color-box);
     color: var(--main-text-color);
-    width: 85%;
+    width: 60%;
     max-width: 675px;
     min-height: 300px;
+    min-width: 400px;
 }
 
 .animate__fadeIn {
@@ -64,6 +65,7 @@ header span.air {
     border: none;
     margin-right: 1rem;
     height: 45px;
+    width: 80%;
 }
 
 .search-box__input:focus {
@@ -80,6 +82,10 @@ header span.air {
     cursor: pointer;
     line-height: initial;
     height: 45px;
+}
+
+.btn-map {
+    width: 100%;
 }
 
 .btn-search:active {
