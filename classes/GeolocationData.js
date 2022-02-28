@@ -9,8 +9,8 @@ class GeolocationData {
         const searchApiUrl = `${this.baseApiUrl}${cityName}&limit=1&appid=${this.me}`;
         $.getJSON(searchApiUrl)
             .done(data => callback(data))
-            .fail(() => callback(null));
+            .fail(() => this.elements.showError('Error geting city location. Try again.'));
     }
 }
 
-//this.elements.showError('Error geting city location. Try again.')
+//

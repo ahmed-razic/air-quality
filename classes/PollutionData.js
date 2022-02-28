@@ -4,27 +4,24 @@ class PollutionData {
         this.baseApiUrl = 'http://api.openweathermap.org/data/2.5/air_pollution';
     }
 
-    getCurrentPollution(location, callback) {
+    getCurrentData(location, callback) {
         const currentApiUrl = `${this.baseApiUrl}?lat=${location.lat}&lon=${location.lon}&appid=${this.me}`;
-        console.log(currentApiUrl);
         $.getJSON(currentApiUrl)
             .done(data => callback(data))
-            .fail(() => callback(null));
+            .fail(() => this.elements.showError('Error geting current pollution data. Try again.'));
     }
 
-    getForecastPollution(location, callback) {
+    getForecastData(location, callback) {
         const forecastApiUrl = `${this.baseApiUrl}/forecast?lat=${location.lat}&lon=${location.lon}&appid=${this.me}`;
         $.getJSON(forecastApiUrl)
             .done(data => callback(data))
-            .fail(() => callback(null));
+            .fail(() => this.elements.showError('Error geting forecast pollution data. Try again.'));
     }
 
-    getHistoricalPollution(location, callback) {
-        const historicalApiUrl = `${this.baseApiUrl}/history?lat=${location.lat}&lon=${
-            location.lon
-        }&start=1606223802&end=${Date.now()}&appid=${this.me}`;
+    getHistoricalData(location, callback) {
+        const historicalApiUrl = `${this.baseApiUrl}/history?lat=${location.lat}&lon=${location.lon}&start=1606223802&end=1606482999&appid=${this.me}`;
         $.getJSON(historicalApiUrl)
             .done(data => callback(data))
-            .fail(() => callback(null));
+            .fail(() => this.elements.showError('Error geting hystorical pollution data. Try again.'));
     }
 }

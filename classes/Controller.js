@@ -1,45 +1,82 @@
 class Controller {
-    constructor() {
-        this.pollutionData = new PollutionData();
-        this.geolocationData = new GeolocationData();
-        this.elements = new DomElements();
-        this.prepareData = new PrepareData();
-        this.start();
-    }
+  constructor() {
+    this.pollutionData = new PollutionData();
+    this.geolocationData = new GeolocationData();
+    this.elements = new DomElements();
+    this.prepareData = new PrepareData();
+  }
 
-    getAllData(cityName) {
-        this.geolocationData.getGeolocation(cityName, location => {
-            if (!location) {
-                this.elements.showError('Could not find city. Please try again.');
-                return;
-            }
-            this.pollutionData.getCurrentPollution(location[0], data => {
-                if (!data) {
-                    this.elements.showError('Could not get pollution data. Please try again.');
-                    return;
-                }
-                this.prepareData.prepareCurrentData(data);
-            });
-        });
-    }
+  currentData(cityName) {
+    this.geolocationData.getGeolocation(cityName, location => {
+      if (!location) {
+        this.elements.showError('Could not find city. Please try again.');
+        return;
+      }
+      this.pollutionData.getCurrentData(location[0], data => {
+        if (!data) {
+          this.elements.showError('Could not get pollution data. Please try again.');
+          return;
+        }
+        this.prepareData.prepareCurrentData(data);
+      });
+    });
+  }
 
-    getCityName() {
-        return this.elements.searchQuery.val().trim();
-    }
+  forecastData(cityName) {
+    this.geolocationData.getGeolocation(cityName, location => {
+      if (!location) {
+        this.elements.showError('Could not find city. Please try again.');
+        return;
+      }
+      this.pollutionData.getForecastData(location[0], data => {
+        if (!data) {
+          this.elements.showError('Could not get pollution data. Please try again.');
+          return;
+        }
+        this.prepareData.prepareForecastData(data);
+      });
+    });
+  }
 
-    onSubmit() {
-        const cityName = this.getCityName();
-        if (!cityName) return;
-        this.elements.hideSearchBox();
-        this.elements.showLoader();
+  historicalData(cityName) {
+    this.geolocationData.getGeolocation(cityName, location => {
+      if (!location) {
+        this.elements.showError('Could not find city. Please try again.');
+        return;
+      }
+      this.pollutionData.getHistoricalData(location[0], data => {
+        if (!data) {
+          this.elements.showError('Could not get pollution data. Please try again.');
+          return;
+        }
+        this.prepareData.prepareHistoricalData(data);
+      });
+    });
+  }
 
-        getAllData(cityName);
-    }
+  getAllData(cityName) {
+    this.currentData(cityName);
+    this.forecastData(cityName);
+    this.historicalData(cityName);
+  }
 
-    start() {
-        this.elements.searchForm.on('submit', e => {
-            e.preventDefault();
-            this.onSubmit();
-        });
-    }
+  getCityName() {
+    return this.elements.searchQuery.val().trim();
+  }
+
+  onSubmit() {
+    const cityName = this.getCityName();
+    if (!cityName) return;
+    this.elements.hideSearchBox();
+    this.elements.showLoader();
+
+    this.getAllData(cityName);
+  }
+
+  start() {
+    this.elements.searchForm.on('submit', e => {
+      e.preventDefault();
+      this.onSubmit();
+    });
+  }
 }
