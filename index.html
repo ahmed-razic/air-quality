@@ -27,7 +27,7 @@
             id="searchBox"
             class="generic-box container px-5 d-flex justify-content-center flex-column align-items-center text-center position-relative"
         >
-            <form class="d-flex align-items-center justify-content-between mb-3 w-100">
+            <form id="searchForm" class="d-flex align-items-center justify-content-between mb-3 w-100">
                 <input
                     aria-label="enter your location here"
                     type="text"
@@ -36,16 +36,11 @@
                     class="search-box__input"
                     placeholder="Enter location"
                     required
+                    value="Sarajevo"
                 />
                 <button id="submitButton" type="submit" class="btn btn-search w-25">Find</button>
             </form>
-            <button id="mapButton" type="button" class="btn btn-search btn-map">Map</button>
             <div id="error" class="error d-block alert position-absolute" role="alert">Error</div>
-        </div>
-
-        <!-- MAP -->
-        <div id="mapBox" class="generic-box container animate__fadeIn d-flex">
-            <div id="map">MAP</div>
         </div>
 
         <!-- RESULTS -->
@@ -175,7 +170,8 @@
     <!-- Local script -->
     <script src="./classes/DomElements.js"></script>
     <script src="./classes/Controller.js"></script>
-    <script src="./classes/FetchData.js"></script>
+    <script src="./classes/GeolocationData.js"></script>
+    <script src="./classes/PollutionData.js"></script>
     <script src="./classes/DisplayResults.js"></script>
     <script src="./classes/PrepareData.js"></script>
     <script src="./index.js"></script>

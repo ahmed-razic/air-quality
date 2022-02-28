@@ -1,10 +1,8 @@
 class DomElements {
     constructor() {
         this.searchBox = $('#searchBox');
+        this.searchForm = $('#searchForm');
         this.searchQuery = $('#searchQuery');
-        this.mapButton = $('#mapButton');
-        this.mapBox = $('#mapBox');
-        this.map = $('#map');
         this.historyBox = $('#historyBox');
         this.loaderBox = $('#loaderBox');
         this.error = $('#error');
@@ -26,16 +24,6 @@ class DomElements {
     hideSearchBox() {
         this.searchBox.removeClass('d-flex');
         this.searchBox.addClass('d-none');
-    }
-
-    showMapBox() {
-        this.mapBox.removeClass('d-none');
-        this.mapBox.addClass('d-flex');
-    }
-
-    hideMapBox() {
-        this.mapBox.removeClass('d-flex');
-        this.mapBox.addClass('d-none');
     }
 
     showHistoryBox() {
