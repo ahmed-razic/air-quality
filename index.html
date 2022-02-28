@@ -24,30 +24,32 @@
         </header>
         <!-- SEARCH-CONTAINER -->
         <div
-            id="search-box"
+            id="searchBox"
             class="generic-box container px-5 d-flex justify-content-center flex-column align-items-center text-center position-relative"
         >
             <form class="d-flex align-items-center justify-content-between mb-3 w-100">
                 <input
                     aria-label="enter your location here"
                     type="text"
-                    name="search"
-                    id="search"
+                    name="searchQuery"
+                    id="query"
                     class="search-box__input"
                     placeholder="Enter location"
                     required
                 />
-                <button type="submit" class="btn btn-search w-25">Find</button>
+                <button id="submitButton" type="submit" class="btn btn-search w-25">Find</button>
             </form>
-            <button type="button" class="btn btn-search btn-map">Map</button>
+            <button id="mapButton" type="button" class="btn btn-search btn-map">Map</button>
             <div id="error" class="error d-block alert position-absolute" role="alert">Error</div>
         </div>
 
         <!-- MAP -->
-        <div class="generic-box container animate__fadeIn d-block">MAP</div>
+        <div id="mapBox" class="generic-box container animate__fadeIn d-flex">
+            <div id="map">MAP</div>
+        </div>
 
         <!-- RESULTS -->
-        <div id="results-box" class="justify-content-center d-flex">
+        <div id="resultsBox" class="justify-content-center d-flex">
             <div class="generic-box animate__fadeIn d-block d-md-flex">
                 <div class="col-12 col-md-4 d-flex results__card">
                     <div class="results__gradient--img"></div>
@@ -83,7 +85,7 @@
         </div>
 
         <!-- HISTORICAL DATA -->
-        <div id="results-box" class="justify-content-center d-flex">
+        <div id="historyBox" class="justify-content-center d-flex">
             <div class="generic-box animate__fadeIn flex-column d-md-flex align-items-center justify-content-around">
                 <ul id="historical-data" class="results__week-list d-flex justify-content-between p-0">
                     <li>asda</li>
@@ -98,7 +100,7 @@
 
         <!-- LOADER -->
 
-        <div id="loader-box" class="d-flex">
+        <div id="loaderBox" class="d-none">
             <div class="generic-box container d-flex justify-content-center align-items-center">
                 <div class="loaderBox animate__fadeIn d-flex justify-content-center align-items-center">
                     <svg
@@ -171,5 +173,10 @@
     </script>
 
     <!-- Local script -->
+    <script src="./classes/DomElements.js"></script>
+    <script src="./classes/Controller.js"></script>
+    <script src="./classes/FetchData.js"></script>
+    <script src="./classes/DisplayResults.js"></script>
+    <script src="./classes/PrepareData.js"></script>
     <script src="./index.js"></script>
 </html>
