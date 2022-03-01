@@ -3,21 +3,20 @@
 ---
 
 <div>
-<p style="display: inline">Official API documentation: </p>
 <a href="https://openweathermap.org/api/air-pollution" target="_blank" rel="noopener noreferrer"
     style="padding:0.5rem 0.7rem;
     color: green;
     background: #BDFFF3;
     border-radius:10px;
     font-size:0.85rem;
-    font-weight:600;">Air Pollution</a> 
+    font-weight:600;">Air Pollution API</a> <br/>
 <a href="https://openweathermap.org/api/geocoding-api" target="_blank" rel="noopener noreferrer"
     style="padding:0.5rem 0.7rem;
     color: green;
     background: #BDFFF3;
     border-radius:10px;
     font-size:0.85rem;
-    font-weight:600;"> Geocoding</a> <br/> 
+    font-weight:600;">Geocoding API</a> <br/> 
 <a href="#" target="_blank" rel="noopener noreferrer"
     style="padding:0.5rem 0.7rem;
     color: black;
@@ -38,11 +37,16 @@
 
 ## About
 
-<p>The City Air Quality is small web app done by me in order to better understand API usage, Jquery and Leaflet maps. It is fairly simple page influenced mostly by <a href="https://theultimateapichallenge.com/" target="_blank" rel="noopener noreferrer">Ultimate API Challenge</a>.</p>
-
-<p>For data fetching a fetch was used.</p>
+<p>The City Air Quality is small web app done by me in order to better understand API usage, Jquery, Day.js time and Leaflet maps. It is fairly simple page influenced mostly by <a href="https://theultimateapichallenge.com/" target="_blank" rel="noopener noreferrer">Ultimate API Challenge</a>.</p>
 
 <p>Working app is deployed on Netlify and there is also a link for video presentation.</p>
+
+## Technology
+
+<p>Jquery</p>
+<p>Day.js</p>
+<p>Bootstrap</p>
+<p>Leaflet</p>
 
 ## Screenshot
 
