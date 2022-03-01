@@ -7,6 +7,7 @@ class DomElements {
     this.historyBox = $('#historyBox');
     this.loaderBox = $('#loaderBox');
     this.error = $('#error');
+    this.map = $('#map');
   }
 
   showLoader() {

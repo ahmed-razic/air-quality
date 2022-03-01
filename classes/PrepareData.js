@@ -2,6 +2,7 @@ class PrepareData {
   constructor() {
     this.displayResults = new DisplayResults();
     this.helpers = new HelperFunctions();
+    this.myMap = new CityMap();
   }
 
   currentDayData(data) {
@@ -9,7 +10,7 @@ class PrepareData {
       city: data.city,
       day: data.day,
       date: data.date,
-      aqIndex: data.aqIndex,
+      aqindex: data.aqindex,
       aqiDescription: data.aqiDescription,
     };
   }
@@ -41,13 +42,14 @@ class PrepareData {
     const date = dayjs().format('DD/MM/YYYY');
     const aqindex = data.list[0].main.aqi;
     const aqiDescription = this.helpers.calculateAqiDescription(aqindex);
-
+    console.log(aqindex);
     const currentDetails = this.currentDayDetailsData({ co, nh3, no, no2, o3, pm2_5, pm10, so2 });
 
     const currentDay = this.currentDayData({ date, day, aqindex, city, aqiDescription });
 
     this.displayResults.showCurrentDayDetails(currentDetails);
     this.displayResults.showCurrentDayData(currentDay);
+    this.myMap.showMap(lon, lat);
   }
   prepareForecastData(data) {
     console.log('Forecast data: ', data);
@@ -55,4 +57,18 @@ class PrepareData {
   prepareHistoricalData(data) {
     console.log('Historical data: ', data);
   }
+
+  /*   showMap(lat, lon) {
+    var map = L.map('map').setView([lat, lon], 13);
+
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+      attribution:
+        'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 18,
+      id: 'mapbox/streets-v11',
+      tileSize: 512,
+      zoomOffset: -1,
+      accessToken: 'your.mapbox.access.token',
+    }).addTo(map);
+  } */
 }

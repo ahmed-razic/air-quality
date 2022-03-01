@@ -3,7 +3,6 @@ class HelperFunctions {
     switch (i) {
       case 1:
         return 'Good';
-
       case 2:
         return 'Fair';
 

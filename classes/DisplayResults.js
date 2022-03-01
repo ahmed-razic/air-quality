@@ -18,7 +18,7 @@ class DisplayResults {
     $('#card-weekday').html(details.day);
     $('#card-date').html(details.date);
     $('#card-location').html(details.city);
-    $('#card-index').html(details.aqi);
+    $('#card-index').html(details.aqindex);
     $('#card-description').html(details.aqiDescription);
   }
 }

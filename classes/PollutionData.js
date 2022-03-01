@@ -5,7 +5,6 @@ class PollutionData {
   }
 
   getCurrentData(location, callback) {
-    console.log(location);
     const currentApiUrl = `${this.baseApiUrl}?lat=${location.lat}&lon=${location.lon}&appid=${this.me}`;
     $.getJSON(currentApiUrl)
       .done(data => {
