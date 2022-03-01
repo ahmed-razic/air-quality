@@ -38,7 +38,7 @@ header span.air {
   box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
   background-color: var(--bg-color-box);
   color: var(--main-text-color);
-  width: 60%;
+  width: 70%;
   max-width: 675px;
   min-height: 300px;
   min-width: 400px;
@@ -171,10 +171,9 @@ header span.air {
 }
 
 .map {
+  background-color: var(--bg-color);
   border-radius: var(--border-radius-primary);
-  -webkit-box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
-  width: 60%;
+  width: 70%;
   max-width: 675px;
   min-height: 300px;
   min-width: 400px;

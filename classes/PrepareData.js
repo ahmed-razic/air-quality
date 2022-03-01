@@ -33,7 +33,6 @@ class PrepareData {
   }
 
   prepareCurrentData(data) {
-    console.log(data);
     const { lon, lat } = data.coord;
     const { co, nh3, no, no2, o3, pm2_5, pm10, so2 } = data.list[0].components;
 
@@ -42,20 +41,19 @@ class PrepareData {
     const date = dayjs().format('DD/MM/YYYY');
     const aqindex = data.list[0].main.aqi;
     const aqiDescription = this.helpers.calculateAqiDescription(aqindex);
-    console.log(aqindex);
     const currentDetails = this.currentDayDetailsData({ co, nh3, no, no2, o3, pm2_5, pm10, so2 });
 
     const currentDay = this.currentDayData({ date, day, aqindex, city, aqiDescription });
 
     this.displayResults.showCurrentDayDetails(currentDetails);
     this.displayResults.showCurrentDayData(currentDay);
-    this.myMap.showMap(lon, lat);
+    this.myMap.showMap(lat, lon);
   }
   prepareForecastData(data) {
-    console.log('Forecast data: ', data);
+    //console.log('Forecast data: ', data);
   }
   prepareHistoricalData(data) {
-    console.log('Historical data: ', data);
+    //console.log('Historical data: ', data);
   }
 
   /*   showMap(lat, lon) {

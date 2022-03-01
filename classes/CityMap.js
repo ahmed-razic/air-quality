@@ -9,7 +9,7 @@ class CityMap {
       id: 'mapbox/streets-v11',
       tileSize: 512,
       zoomOffset: -1,
-      accessToken: 'your.mapbox.access.token',
+      accessToken: 'pk.eyJ1IjoiYWhtZWQtcmF6aWMiLCJhIjoiY2wwOGl3ZTkwMDNvdTNpbGdzMThmczBsdSJ9.Cqh4zSucHQ7fe8V-is50Qw',
     }).addTo(map);
 
     L.marker([lat, lon]).addTo(map).bindPopup('Your city').openPopup();
