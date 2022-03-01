@@ -1,22 +1,25 @@
 class PrepareData {
   constructor() {
     this.displayResults = new DisplayResults();
+    this.helpers = new HelperFunctions();
   }
 
-  currentDay(data) {
-    return {};
-  }
-
-  currentDayDetails(data) {
+  currentDayData(data) {
     return {
-      'Carbon monoxide': { value: data.co, unit: '&mu;g/m<sup>3</sup>' },
-      'Nitrogen monoxide': { value: data.no, unit: '&mu;g/m<sup>3</sup>' },
-      'Nitrogen dioxide': { value: data.no2, unit: '&mu;g/m<sup>3</sup>' },
-      Ozone: { value: data.o3, unit: '&mu;g/m<sup>3</sup>' },
-      'Sulphur dioxide': { value: data.so2, unit: '&mu;g/m<sup>3</sup>' },
-      'Fine particles matter': { value: data.pm2_5, unit: '&mu;g/m<sup>3</sup>' },
-      'Coarse particulate matter': { value: data.pm10, unit: '&mu;g/m<sup>3</sup>' },
-      Ammonia: { value: data.nh3, unit: '&mu;g/m<sup>3</sup>' },
+      cityName: data.city,
+    };
+  }
+
+  currentDayDetailsData(data) {
+    return {
+      'Carbon monoxide': data.co,
+      'Nitrogen monoxide': data.no,
+      'Nitrogen dioxide': data.no2,
+      Ozone: data.o3,
+      'Sulphur dioxide': data.so2,
+      'Fine particles matter': data.pm2_5,
+      'Coarse particulate matter': data.pm10,
+      Ammonia: data.nh3,
     };
   }
 
@@ -25,14 +28,20 @@ class PrepareData {
   }
 
   prepareCurrentData(data) {
+    console.log(data);
     const { lon, lat } = data.coord;
-    const { co, nh3, no, no2, o3, pm2_5, pm10, so2 } = data.list[0].components;
-    const dt = data.list[0].dt;
-    const aqi = data.list[0].main.aqi;
 
-    const currentDetails = this.currentDayDetails({ co, nh3, no, no2, o3, pm2_5, pm10, so2 });
-    console.log(currentDetails);
+    const { co, nh3, no, no2, o3, pm2_5, pm10, so2 } = data.list[0].components;
+
+    const date = data.list[0].dt;
+    const aqindex = data.list[0].main.aqi;
+    const aqiDescription = this.helpers.calculateAqiDescription(aqindex);
+    const city = data.location.cityName;
+
+    const currentDetails = this.currentDayDetailsData({ co, nh3, no, no2, o3, pm2_5, pm10, so2 });
     this.displayResults.showCurrentDayDetails(currentDetails);
+
+    const currentDay = this.currentDayData({ date, aqindex, city, aqiDescription });
   }
   prepareForecastData(data) {
     console.log('Forecast data: ', data);
