@@ -3,7 +3,7 @@
 ---
 
 <div>
-<p>Official API documentation: </p>
+<p style="display: inline">Official API documentation: </p>
 <a href="https://openweathermap.org/api/air-pollution" target="_blank" rel="noopener noreferrer"
     style="padding:0.5rem 0.7rem;
     color: green;
