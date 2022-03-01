@@ -13,4 +13,12 @@ class DisplayResults {
     this.elements.hideLoader();
     this.elements.showResultsBox();
   }
+
+  showCurrentDayData(details) {
+    $('#card-weekday').html(details.day);
+    $('#card-date').html(details.date);
+    $('#card-location').html(details.city);
+    $('#card-index').html(details.aqi);
+    $('#card-description').html(details.aqiDescription);
+  }
 }
