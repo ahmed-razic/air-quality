@@ -4,7 +4,6 @@ class DomElements {
     this.searchForm = $('#searchForm');
     this.searchQuery = $('#searchQuery');
     this.resultsBox = $('#resultsBox');
-    this.historyBox = $('#historyBox');
     this.loaderBox = $('#loaderBox');
     this.error = $('#error');
     this.map = $('#map');
@@ -36,16 +35,6 @@ class DomElements {
   hideResultsBox() {
     this.resultsBox.removeClass('d-flex');
     this.resultsBox.addClass('d-none');
-  }
-
-  showHistoryBox() {
-    this.historyBox.removeClass('d-none');
-    this.historyBox.addClass('d-flex');
-  }
-
-  hideHistoryBox() {
-    this.historyBox.removeClass('d-flex');
-    this.historyBox.addClass('d-none');
   }
 
   showError() {

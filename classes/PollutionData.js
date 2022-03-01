@@ -14,7 +14,7 @@ class PollutionData {
       .fail(() => this.elements.showError('Error geting current pollution data. Try again.'));
   }
 
-  getForecastData(location, callback) {
+  /*   getForecastData(location, callback) {
     const forecastApiUrl = `${this.baseApiUrl}/forecast?lat=${location.lat}&lon=${location.lon}&appid=${this.me}`;
     $.getJSON(forecastApiUrl)
       .done(data => {
@@ -22,9 +22,9 @@ class PollutionData {
         callback(data);
       })
       .fail(() => this.elements.showError('Error geting forecast pollution data. Try again.'));
-  }
+  } */
 
-  getHistoricalData(location, callback) {
+  /*   getHistoricalData(location, callback) {
     const historicalApiUrl = `${this.baseApiUrl}/history?lat=${location.lat}&lon=${location.lon}&start=1606223802&end=1606482999&appid=${this.me}`;
     $.getJSON(historicalApiUrl)
       .done(data => {
@@ -32,5 +32,5 @@ class PollutionData {
         callback(data);
       })
       .fail(() => this.elements.showError('Error geting hystorical pollution data. Try again.'));
-  }
+  } */
 }

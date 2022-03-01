@@ -19,13 +19,4 @@ class HelperFunctions {
         return 'N/A';
     }
   }
-
-  getDay() {
-    const d = new Date();
-    const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-
-    let day = weekday[d.getDay()];
-    let date = d.getDate();
-    return { day, date };
-  }
 }

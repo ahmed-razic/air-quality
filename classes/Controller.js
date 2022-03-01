@@ -22,7 +22,7 @@ class Controller {
     });
   }
 
-  forecastData(cityName) {
+  /* forecastData(cityName) {
     this.geolocationData.getGeolocation(cityName, location => {
       if (!location) {
         this.elements.showError('Could not find city. Please try again.');
@@ -36,9 +36,9 @@ class Controller {
         this.prepareData.prepareForecastData(data);
       });
     });
-  }
+  } */
 
-  historicalData(cityName) {
+  /* historicalData(cityName) {
     this.geolocationData.getGeolocation(cityName, location => {
       if (!location) {
         this.elements.showError('Could not find city. Please try again.');
@@ -52,12 +52,10 @@ class Controller {
         this.prepareData.prepareHistoricalData(data);
       });
     });
-  }
+  } */
 
   getAllData(cityName) {
     this.currentData(cityName);
-    this.forecastData(cityName);
-    this.historicalData(cityName);
   }
 
   getCityName() {
