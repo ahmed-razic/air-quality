@@ -1,7 +1,7 @@
 class PollutionData {
   constructor() {
     this.me = '710c6cc112097842960b03138d82fd30';
-    this.baseApiUrl = 'http://api.openweathermap.org/data/2.5/air_pollution';
+    this.baseApiUrl = 'https://api.openweathermap.org/data/2.5/air_pollution';
   }
 
   getCurrentData(location, callback) {
